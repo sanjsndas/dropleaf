@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Dropleaf Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #22c55e 0%, #3b82f6 100%);
+        }
+        .leaf-bg {
+            background-image: url('https://images.unsplash.com/photo-1534710961216-75c88202f43e');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: multiply;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #22c55e;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .contact-point {
+            margin-bottom: 2rem;
+        }
+        .contact-point h3 {
+            color: #22c55e;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .form-input {
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            padding: 0.75rem;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        .form-input:focus {
+            border-color: #22c55e;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3">
+                <span class="text-2xl font-bold text-green-600">Dropleaf Pro</span>
+                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Smart watering. Healthier leaves.</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="nav-link text-gray-700 hover:text-green-600 transition-colors" tabindex="0">Home</a>
+                <a href="privacy.html" class="nav-link text-gray-700 hover:text-green-600 transition-colors" tabindex="0">Privacy</a>
+                <a href="terms.html" class="nav-link text-gray-700 hover:text-green-600 transition-colors" tabindex="0">Terms & Conditions</a>
+                <a href="cookies.html" class="nav-link text-gray-700 hover:text-green-600 transition-colors" tabindex="0">Cookies</a>
+                <a href="contact.html" class="nav-link text-green-600 font-medium" aria-current="page" tabindex="0">Contact Us</a>
+                <a href="#" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors shadow-md">Schedule Consultation</a>
+            </div>
+            
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round", stroke-width="2", d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-white shadow-lg" id="mobile-menu">
+            <div class="px-4 py-3 flex flex-col space-y-3">
+                <a href="index.html" class="nav-link text-gray-700 hover:text-green-600 transition-colors py-2" tabindex="0">Home</a>
+                <a href="privacy.html" class="nav-link text-gray-700 hover:text-green-600 transition-colors py-2" tabindex="0">Privacy</a>
+                <a href="terms.html" class="nav-link text-gray-700 hover:text-green-600 transition-colors py-2" tabindex="0">Terms & Conditions</a>
+                <a href="cookies.html" class="nav-link text-gray-700 hover:text-green-600 transition-colors py-2" tabindex="0">Cookies</a>
+                <a href="contact.html" class="nav-link text-green-600 font-medium py-2" aria-current="page" tabindex="0">Contact Us</a>
+                <a href="#" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors text-center shadow-md">Schedule Consultation</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Form Section -->
+    <section class="hero-gradient text-white py-16">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-8 text-center">Contact Dropleaf Pro</h1>
+            
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
+                <div class="bg-white rounded-xl shadow-lg p-8 text-gray-800">
+                    <h2 class="text-2xl font-bold mb-6">Send Us a Message</h2>
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 mb-2">Full Name</label>
+                            <input type="text" id="name" class="form-input" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="email" class="form-input" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
+                            <input type="tel" id="phone" class="form-input" placeholder="(123) 456-7890">
+                        </div>
+                        <div class="mb-4">
+                            <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                            <select id="subject" class="form-input">
+                                <option value="general">General Inquiry</option>
+                                <option value="service">Service Request</option>
+                                <option value="billing">Billing Question</option>
+                                <option value="technical">Technical Support</option>
+                                <option value="feedback">Feedback/Suggestion</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 mb-2">Message</label>
+                            <textarea id="message" rows="5" class="form-input" placeholder="Your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-lg w-full">Send Message</button>
+                    </form>
+                </div>
+                
+                <div>
+                    <h2 class="text-2xl font-bold mb-6">Contact Information</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="text-green-500 text-xl mr-4 mt-1">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">Our Office</h3>
+                                <p>33 3rd Ave, New York, NY 10003, USA</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-green-500 text-xl mr-4 mt-1">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">Phone</h3>
+                                <p>Main: (123) 456-7890</p>
+                                <p>Support: (123) 456-7891</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-green-500 text-xl mr-4 mt-1">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">Email</h3>
+                                <p>General: info@dropleafpro.com</p>
+                                <p>Support: support@dropleafpro.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-green-500 text-xl mr-4 mt-1">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">Business Hours</h3>
+                                <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                                <p>Saturday: 9:00 AM - 2:00 PM</p>
+                                <p>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Comprehensive Contact Information</h2>
+                <div class="w-20 h-1 bg-green-500 mx-auto mb-6"></div>
+                <p class="text-gray-600">We're here to help with all your irrigation and plant care needs. Below you'll find detailed information about how to reach us, our service areas, and frequently asked questions.</p>
+            </div>
+
+            <div class="prose max-w-none">
+                <div class="contact-point">
+                    <h3>1. General Inquiries</h3>
+                    <p>For general questions about our services, pricing, or company information, please contact our main office at info@dropleafpro.com or call (123) 456-7890 during business hours. Our friendly customer service representatives are available to answer your questions and provide guidance regarding our smart irrigation solutions. You can also visit our FAQ section below for quick answers to common questions.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>2. Technical Support</h3>
+                    <p>Experiencing issues with your Dropleaf Pro system? Our technical support team is available Monday through Friday from 8:00 AM to 8:00 PM and Saturday from 9:00 AM to 2:00 PM. Contact us at support@dropleafpro.com or call our dedicated support line at (123) 456-7891. Please have your system model number and installation date ready to help us assist you more efficiently. For urgent matters outside normal hours, please use our emergency contact form.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>3. Sales Department</h3>
+                    <p>Interested in our irrigation systems or landscaping services? Our sales team can provide detailed product information, pricing, and service packages tailored to your specific needs. Contact sales@dropleafpro.com or call (123) 456-7892 to speak with a representative. We offer free initial consultations and on-site evaluations for our commercial clients. Be sure to ask about our current promotions and financing options.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>4. Billing Questions</h3>
+                    <p>For account inquiries, billing questions, or payment arrangements, please contact our billing department at billing@dropleafpro.com or (123) 456-7893. Our business hours for billing are Monday through Friday, 9:00 AM to 5:00 PM. Online payments can be made through our secure customer portal. Please note that we accept all major credit cards, ACH transfers, and checks mailed to our business address (please allow 5-7 business days for processing).</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>5. Service Scheduling</h3>
+                    <p>To schedule maintenance, repairs, or new installations, please call our service desk at (123) 456-7894 or use our online scheduling tool available 24/7. Our standard service hours are Monday through Saturday, with emergency services available for critical system failures. Most routine appointments can be scheduled within 3-5 business days, while emergency requests are prioritized and typically addressed within 24 hours.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>6. Commercial Accounts</h3>
+                    <p>We offer specialized services for commercial properties, HOAs, and municipal clients. Our commercial division can be reached at commercial@dropleafpro.com or (123) 456-7895. Dedicated account managers are available to coordinate large-scale projects and ongoing maintenance contracts. We provide customized solutions for properties of all sizes, from small businesses to large campuses and recreational facilities.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>7. Employment Opportunities</h3>
+                    <p>Dropleaf Pro is always looking for skilled irrigation technicians, landscape designers, and customer service professionals. To inquire about current job openings, please send your resume to careers@dropleafpro.com. Our HR department reviews applications regularly and will contact qualified candidates for interviews. We offer competitive compensation, benefits packages, and ongoing training opportunities in the latest irrigation technologies.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>8. Press Inquiries</h3>
+                    <p>Members of the media may contact our communications team at press@dropleafpro.com for company information, executive interviews, or expert commentary on water conservation and smart irrigation technology. Please include your name, media outlet, deadline, and specific questions in your inquiry. Our PR team typically responds to media requests within 24-48 hours during business days.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>9. Investor Relations</h3>
+                    <p>For investor-related questions, financial information, or shareholder services, please contact our investor relations department at investors@dropleafpro.com. We hold quarterly conference calls to discuss financial results and strategic initiatives, with materials available on our investor relations portal. Individual meetings with senior management can be arranged through our investor relations coordinator.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>10. Supplier Partnerships</h3>
+                    <p>Companies interested in becoming approved suppliers or service providers for Dropleaf Pro can submit information to procurement@dropleafpro.com. We evaluate potential vendors based on product quality, pricing, sustainability practices, and reliability. Our vendor qualification process typically takes 4-6 weeks, and approved suppliers are added to our procurement system for future bidding opportunities.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>11. Service Coverage Areas</h3>
+                    <p>Dropleaf Pro provides residential and commercial irrigation services throughout the New York metropolitan area, including all five boroughs, Long Island, Westchester County, and northern New Jersey. Service expansion to additional regions is ongoing – check our website for updates or contact us to inquire about service availability in your area. Some remote locations may require additional travel fees.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>12. Emergency Contact Procedure</h3>
+                    <p>For irrigation emergencies that require immediate attention (such as major leaks or system failures causing property damage or water waste), please call our 24/7 emergency line at (123) 456-7899. Our on-call technicians typically respond within 2 hours for emergency situations. Standard service rates apply, with a 50% surcharge for after-hours emergency calls (waived for customers with our premium service plans).</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>13. Accessibility Assistance</h3>
+                    <p>Dropleaf Pro is committed to serving all customers, including those with disabilities. For accessibility-related inquiries or requests for accommodation, please contact accessibility@dropleafpro.com or (123) 456-7888 (TTY). Our website has been designed to meet WCAG 2.1 AA standards, and we welcome feedback on how we can improve accessibility in our services and communications.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>14. Customer Feedback</h3>
+                    <p>We value your opinions and strive to continuously improve our services. To share your feedback, suggestions, or concerns, please email feedback@dropleafpro.com or complete our customer satisfaction survey after service visits. All feedback is reviewed by our customer experience team, and you can expect a response within 48 hours for detailed inquiries. Your input helps us enhance our offerings and service quality.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>15. Warranty Claims</h3>
+                    <p>To file a warranty claim for your Dropleaf Pro system or components, please contact warranty@dropleafpro.com or call (123) 456-788 6. Our warranty department will guide you through the claims process, which typically requires proof of purchase and a description of the issue. Warranty claims are subject to review and may take up to 14 business days for processing. Please ensure that your system has been installed according to our guidelines to maintain warranty coverage.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>16. Community Engagement</h3>
+                    <p>Dropleaf Pro is dedicated to giving back to the community through various initiatives and partnerships. If you represent a nonprofit organization or community group interested in collaborating with us, please reach out to community@dropleafpro.com. We support local events, educational programs, and sustainability efforts that align with our mission of promoting water conservation and environmental stewardship.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>17. Sustainability Practices</h3>
+                    <p>We are committed to sustainable practices in our operations and services. For inquiries about our sustainability initiatives, including water conservation programs and eco-friendly products, please contact sustainability@dropleafpro.com. We are always looking for ways to reduce our environmental impact and promote responsible water use among our customers and partners.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>18. Educational Resources</h3>
+                    <p>Dropleaf Pro offers a variety of educational resources for homeowners and businesses interested in learning more about irrigation technology and plant care. For access to our guides, webinars, and workshops, please visit our resources page or contact education@dropleafpro.com. We believe that informed customers make better decisions regarding their irrigation needs.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>19. Social Media Engagement</h3>
+                    <p>Stay connected with Dropleaf Pro through our social media channels! Follow us on Facebook, Instagram, and Twitter for updates, tips, and promotions. For social media inquiries or collaborations, please reach out to socialmedia@dropleafpro.com. We love engaging with our community and sharing valuable content related to irrigation and plant care.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>20. Customer Loyalty Program</h3>
+                    <p>Join our customer loyalty program to earn rewards for your continued business with Dropleaf Pro. For more information about the program, including how to sign up and redeem rewards, please contact loyalty@dropleafpro.com. Our loyalty program offers exclusive discounts, early access to promotions, and special offers for our most valued customers.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>21. Referral Program</h3>
+                    <p>Refer a friend to Dropleaf Pro and receive a discount on your next service! For details about our referral program, including how to participate and the rewards available, please contact referrals@dropleafpro.com. We appreciate your support in helping us grow our community of satisfied customers.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>22. Service Area Expansion</h3>
+                    <p>We are continually expanding our service areas to better serve our customers. If you are located outside our current service areas and are interested in our services, please contact expansion@dropleafpro.com. We value your interest and will keep you updated on our growth and availability in your region.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>23. Customer Satisfaction Guarantee</h3>
+                    <p>At Dropleaf Pro, we stand behind our services with a customer satisfaction guarantee. If you are not completely satisfied with our work, please contact us within 30 days of service completion at satisfaction@dropleafpro.com. We will work with you to address any concerns and ensure your satisfaction with our services.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>24. Privacy Concerns</h3>
+                    <p>Your privacy is important to us. If you have any questions or concerns about how we handle your personal information, please contact privacy@dropleafpro.com. We are committed to protecting your data and complying with all applicable privacy laws and regulations.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>25. Terms of Service</h3>
+                    <p>For information regarding our terms of service, including your rights and responsibilities as a customer, please visit our Terms and Conditions page or contact legal@dropleafpro.com. We encourage all customers to familiarize themselves with our policies to ensure a smooth experience with our services.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>26. Service Reviews</h3>
+                    <p>We appreciate your feedback! If you would like to leave a review of your experience with Dropleaf Pro, please visit our review page or contact reviews@dropleafpro.com. Your reviews help us improve our services and assist other customers in making informed decisions.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>27. Community Events</h3>
+                    <p>Dropleaf Pro participates in various community events throughout the year. For information about upcoming events, sponsorship opportunities, or to invite us to your event, please contact events@dropleafpro.com. We love engaging with our community and sharing our expertise in irrigation and plant care.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>28. Product Information</h3>
+                    <p>For detailed information about our products, including specifications, installation guides, and maintenance tips, please visit our product page or contact products@dropleafpro.com. Our team is here to help you choose the right products for your irrigation needs.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>29. Warranty Information</h3>
+                    <p>For questions regarding warranty coverage for your Dropleaf Pro products, please contact warranty@dropleafpro.com. We provide comprehensive warranty information for all our products, ensuring you have peace of mind with your purchase.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>30. Installation Services</h3>
+                     <p>For inquiries about installation services for your irrigation system, please contact our installation team at install@dropleafpro.com. We offer professional installation services to ensure your system is set up correctly and efficiently. Our technicians are trained to handle installations of all sizes, from residential gardens to large commercial properties. We recommend scheduling a consultation to discuss your specific needs and receive a detailed quote.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>31. Maintenance Services</h3>
+                    <p>Regular maintenance is essential for the longevity and efficiency of your irrigation system. To schedule maintenance services, please reach out to maintenance@dropleafpro.com or call (123) 456-7894. Our maintenance packages include seasonal check-ups, system adjustments, and repairs to ensure optimal performance. We recommend scheduling maintenance at least twice a year to keep your system running smoothly.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>32. Seasonal Tips</h3>
+                    <p>To help you get the most out of your irrigation system, we provide seasonal tips and best practices. For personalized advice based on your specific climate and plant types, please contact tips@dropleafpro.com. Our experts can guide you on watering schedules, plant care, and system adjustments to maximize efficiency and plant health throughout the year.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>33. Water Conservation Initiatives</h3>
+                    <p>Dropleaf Pro is committed to promoting water conservation. If you are interested in learning more about our water-saving technologies and initiatives, please contact conservation@dropleafpro.com. We offer workshops, resources, and consultations to help you implement water-efficient practices in your home or business.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>34. Community Partnerships</h3>
+                    <p>We believe in the power of community partnerships to drive positive change. If you represent a local organization or initiative focused on sustainability or environmental stewardship, please reach out to partnerships@dropleafpro.com. We are open to collaborating on projects that align with our mission and benefit the community.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>35. Customer Education</h3>
+                    <p>We offer various educational resources to help our customers understand their irrigation systems better. For access to guides, videos, and workshops, please contact education@dropleafpro.com. Our goal is to empower you with the knowledge to make informed decisions about your irrigation and plant care.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>36. Feedback and Suggestions</h3>
+                    <p>Your feedback is invaluable to us. If you have suggestions for improving our services or products, please contact feedback@dropleafpro.com. We review all feedback and use it to enhance our offerings and customer experience. Your insights help us serve you better.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>37. Social Responsibility</h3>
+                    <p>Dropleaf Pro is dedicated to social responsibility and giving back to the community. If you are interested in partnering with us for charitable initiatives or community service projects, please reach out to socialresponsibility@dropleafpro.com. We are committed to making a positive impact in the communities we serve.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>38. Customer Testimonials</h3>
+                    <p>We love hearing from our satisfied customers! If you would like to share your experience with Dropleaf Pro, please contact testimonials@dropleafpro.com. Your testimonials help us build trust with potential customers and showcase the quality of our services.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>39. Industry News</h3>
+                    <p>Stay informed about the latest trends and developments in the irrigation industry. For news updates, articles, and insights, please subscribe to our newsletter or contact news@dropleafpro.com. We aim to keep our customers informed about innovations and best practices in irrigation and plant care.</p>
+                </div>
+
+                <div class="contact-point">
+                    <h3>40. Final Thoughts</h3>
+                    <p>Thank you for considering Dropleaf Pro for your irrigation and plant care needs. We are here to assist you every step of the way. If you have any questions or need further assistance, please do not hesitate to reach out to us. We look forward to serving you and helping you achieve a thriving garden or landscape.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 Dropleaf Pro. All rights reserved.</p>
+            <p>Address: 33 3rd Ave, New York, NY 10003, USA | Phone: (123) 456-7890</p>
+        </div>
+    </footer>
+</body>
+</html>
